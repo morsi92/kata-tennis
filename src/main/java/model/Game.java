@@ -15,6 +15,8 @@ public class Game {
     public String getScore() {
         Player leadPlayer = getLeadPlayer();
         if (leadPlayer.getGameScore() > 3) {
+            playerOne.resetGameScore();
+            playerTwo.resetGameScore();
             return leadPlayer.getName() + SPACE + WIN_THE_GAME;
         } else {
             return playerOne.geScoreToDisplay() + "\n" + playerTwo.geScoreToDisplay();

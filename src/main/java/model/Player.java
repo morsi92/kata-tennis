@@ -34,4 +34,8 @@ public class Player {
     public void setGameScore(int gameScore) {
         this.gameScore = gameScore;
     }
+
+    public void resetGameScore() {
+        this.gameScore = 0;
+    }
 }
