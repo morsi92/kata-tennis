@@ -46,7 +46,7 @@ public class Game extends Score {
         return Math.abs(playerOne.getGameScore() - playerTwo.getGameScore()) == 1;
     }
 
-    private Player getLeadPlayer() {
+    Player getLeadPlayer() {
         return playerOne.getGameScore() >= playerTwo.getGameScore() ? playerOne : playerTwo;
     }
 

@@ -1,5 +1,7 @@
 package model;
 
+import static constants.Constants.*;
+
 public class Set extends Score {
 
     Set(Player playerOne, Player playerTwo) {
@@ -10,6 +12,14 @@ public class Set extends Score {
     }
 
     public String getScore() {
+        Player leadPlayer = getLeadPlayer();
+        if (leadPlayer.getSetScore() == 6) {
+            return leadPlayer.getName() + SPACE + WIN_THE_SET;
+        }
         return display(playerOne.getSetScoreToDisplay(), playerTwo.getSetScoreToDisplay());
+    }
+
+    Player getLeadPlayer() {
+        return playerOne.getSetScore() >= playerTwo.getSetScore() ? playerOne : playerTwo;
     }
 }

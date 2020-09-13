@@ -13,15 +13,15 @@ public class Player {
         this.gameScore = 0;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public int getGameScore() {
+    int getGameScore() {
         return gameScore;
     }
 
-    public String getGameScoreString() {
+    String getGameScoreString() {
         if (gameScore < 3) {
             return GAME_SCORE_TO_DISPLAY.get(gameScore);
         } else {
@@ -29,36 +29,40 @@ public class Player {
         }
     }
 
-    public String geGameScoreToDisplay() {
+    String geGameScoreToDisplay() {
         return this.name + SPACE + getGameScoreString();
     }
 
-    public String geGameScoreToDisplay(String score) {
+    String geGameScoreToDisplay(String score) {
         return this.name + SPACE + score;
     }
 
-    public void setGameScore(int gameScore) {
+    void setGameScore(int gameScore) {
         this.gameScore = gameScore;
     }
 
-    public void resetGameScore() {
+    void resetGameScore() {
         this.gameScore = 0;
     }
 
-    public void winsPoint() {
+    void winsPoint() {
         System.out.println(name + " wins 1 point");
         this.gameScore++;
     }
 
-    public boolean hasSameGameScoreAs(Player player) {
+    boolean hasSameGameScoreAs(Player player) {
         return this.gameScore == player.getGameScore();
     }
 
-    public void setSetScore(int setScore) {
+    void setSetScore(int setScore) {
         this.setScore = setScore;
     }
 
-    public String getSetScoreToDisplay() {
+    public int getSetScore() {
+        return this.setScore;
+    }
+
+    String getSetScoreToDisplay() {
         return this.name + SPACE + setScore;
     }
 }
