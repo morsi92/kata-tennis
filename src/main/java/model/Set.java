@@ -14,6 +14,9 @@ public class Set extends Score {
 
     public String getScore() {
         if (currentGame.isEnded()) {
+            if (tieBreakReached()) {
+                currentGame = new TieBreakGame(playerOne, playerTwo);
+            }
             currentGame = new Game(playerOne, playerTwo);
         }
         Player leadPlayer = getLeadPlayer();
@@ -21,6 +24,10 @@ public class Set extends Score {
             return leadPlayer.winTheSet();
         }
         return display(playerOne.getSetScoreToDisplay(), playerTwo.getSetScoreToDisplay());
+    }
+
+    private boolean tieBreakReached() {
+        return playerOne.getSetScore() == 6 && playerTwo.getSetScore() == 6;
     }
 
     Player getLeadPlayer() {

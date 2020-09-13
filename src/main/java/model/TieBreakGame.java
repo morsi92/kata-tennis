@@ -1,13 +1,12 @@
 package model;
 
-class TieBreakGame extends Score {
+class TieBreakGame extends Game {
 
     TieBreakGame(Player playerOne, Player playerTwo) {
-        this.playerOne = playerOne;
-        this.playerTwo = playerTwo;
+        super(playerOne, playerTwo);
     }
 
-    String getScore() {
+    public String getScore() {
         Player leadPlayer = getLeadPlayer();
         if (leadPlayer.getTieBreakScore() >= 7 && atLeastTwoPointsDifference()) {
             return leadPlayer.winTheGame();
