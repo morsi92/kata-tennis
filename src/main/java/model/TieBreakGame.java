@@ -1,20 +1,25 @@
 package model;
 
-public class TieBreakGame extends Score {
-
-    private boolean ended;
+class TieBreakGame extends Score {
 
     TieBreakGame(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
-        ended = false;
     }
 
     String getScore() {
+        Player leadPlayer = getLeadPlayer();
+        if (leadPlayer.getTieBreakScore() >= 7 && atLeastTwoPointsDifference()) {
+            return leadPlayer.winTheGame();
+        }
         return display(playerOne.getTieBreakScoreToDisplay(), playerTwo.getTieBreakScoreToDisplay());
     }
 
+    private boolean atLeastTwoPointsDifference() {
+        return Math.abs(playerOne.getTieBreakScore() - playerTwo.getTieBreakScore()) >= 2;
+    }
+
     Player getLeadPlayer() {
-        return null;
+        return playerOne.getTieBreakScore() >= playerTwo.getTieBreakScore() ? playerOne : playerTwo;
     }
 }

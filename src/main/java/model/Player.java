@@ -12,6 +12,8 @@ public class Player {
     public Player(String name) {
         this.name = name;
         this.gameScore = 0;
+        this.setScore = 0;
+        this.tieBreakScore = 0;
     }
 
     int getGameScore() {
@@ -62,6 +64,10 @@ public class Player {
 
     void setTieBreakScore(int tieBreakScore) {
         this.tieBreakScore = tieBreakScore;
+    }
+
+    int getTieBreakScore() {
+        return this.tieBreakScore;
     }
 
     public int getSetScore() {

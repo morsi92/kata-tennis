@@ -56,5 +56,22 @@ class TieBreakGameTest {
         // Then
         Assertions.assertThat(tieBreakGame.getScore()).isEqualTo(expectedGameScore);
     }
+    @Test
+    void should_display_tie_break_game_score_when_player_win_the_game_with_more_than_seven_points() {
+        // Given
+        String playerOneName = "player one name";
+        String playerTwoName = "player two name";
+        Player playerOne = new Player(playerOneName);
+        Player playerTwo = new Player(playerTwoName);
+        String expectedGameScore = playerOneName + " win the game";
+
+        // When
+        TieBreakGame tieBreakGame = new TieBreakGame(playerOne, playerTwo);
+        playerOne.setTieBreakScore(10);
+        playerTwo.setTieBreakScore(8);
+
+        // Then
+        Assertions.assertThat(tieBreakGame.getScore()).isEqualTo(expectedGameScore);
+    }
 
 }
