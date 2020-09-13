@@ -17,25 +17,39 @@ public class Game {
         Player leadPlayer = getLeadPlayer();
         if (leadPlayer.getGameScore() > 3) {
             if (playerOne.hasSameGameScoreAs(playerTwo)) {
-                return playerOne.geScoreToDisplay(DEUCE) + "\n" + playerTwo.geScoreToDisplay(DEUCE);
+                return deuce();
             } else {
-                if (Math.abs(playerOne.getGameScore() - playerTwo.getGameScore()) == 1) {
-                    if (playerOne.getGameScore() > playerTwo.getGameScore()) {
-                        return playerOne.geScoreToDisplay("ADV") + "\n" + playerTwo.geScoreToDisplay("40");
-                    } else {
-                        return playerOne.geScoreToDisplay("40") + "\n" + playerTwo.geScoreToDisplay("ADV");
-                    }
-
-                } else {
-                    playerOne.resetGameScore();
-                    playerTwo.resetGameScore();
-                    return leadPlayer.getName() + SPACE + WIN_THE_GAME;
+                if (isOnePointDifference()) {
+                    return advantageLeadPlayer(leadPlayer);
                 }
-
+                return leadPlayerWin(leadPlayer);
             }
-        } else {
-            return playerOne.geScoreToDisplay() + "\n" + playerTwo.geScoreToDisplay();
         }
+        return display(playerOne.geScoreToDisplay(), playerTwo.geScoreToDisplay());
+
+    }
+
+    private String display(String scoreOne, String scoreTwo) {
+        return scoreOne + "\n" + scoreTwo;
+    }
+
+    private String deuce() {
+        return display(playerOne.geScoreToDisplay(DEUCE), playerTwo.geScoreToDisplay(DEUCE));
+    }
+
+    private String leadPlayerWin(Player leadPlayer) {
+        playerOne.resetGameScore();
+        playerTwo.resetGameScore();
+        return leadPlayer.getName() + SPACE + WIN_THE_GAME;
+    }
+
+    private String advantageLeadPlayer(Player leadPlayer) {
+        return leadPlayer == playerOne ? display(playerOne.geScoreToDisplay(ADVANTAGE), playerTwo.geScoreToDisplay()) :
+                display(playerOne.geScoreToDisplay(), playerTwo.geScoreToDisplay(ADVANTAGE));
+    }
+
+    private boolean isOnePointDifference() {
+        return Math.abs(playerOne.getGameScore() - playerTwo.getGameScore()) == 1;
     }
 
     private Player getLeadPlayer() {
