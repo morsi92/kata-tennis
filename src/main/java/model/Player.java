@@ -38,4 +38,9 @@ public class Player {
     public void resetGameScore() {
         this.gameScore = 0;
     }
+
+    public void winsPoint() {
+        System.out.println(name + " wins 1 point");
+        this.gameScore++;
+    }
 }

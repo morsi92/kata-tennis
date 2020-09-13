@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Random;
+
 import static constants.Constants.SPACE;
 import static constants.Constants.WIN_THE_GAME;
 
@@ -25,5 +27,16 @@ public class Game {
 
     private Player getLeadPlayer() {
         return playerOne.getGameScore() >= playerTwo.getGameScore() ? playerOne : playerTwo;
+    }
+
+    public void scoreRandomPoint() {
+        int random = new Random().nextInt(2) + 1;
+        switch (random){
+            case 1 : playerOne.winsPoint();
+                break;
+            case 2 : playerTwo.winsPoint();
+                break;
+            default: break;
+        }
     }
 }
