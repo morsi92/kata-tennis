@@ -17,9 +17,13 @@ public class Game {
     public String getScore() {
         Player leadPlayer = getLeadPlayer();
         if (leadPlayer.getGameScore() > 3) {
-            playerOne.resetGameScore();
-            playerTwo.resetGameScore();
-            return leadPlayer.getName() + SPACE + WIN_THE_GAME;
+            if (playerOne.getGameScore() == playerTwo.getGameScore()) {
+                return playerOne.getName() + SPACE + "DEUCE" + "\n" + playerTwo.getName() + SPACE + "DEUCE";
+            } else {
+                playerOne.resetGameScore();
+                playerTwo.resetGameScore();
+                return leadPlayer.getName() + SPACE + WIN_THE_GAME;
+            }
         } else {
             return playerOne.geScoreToDisplay() + "\n" + playerTwo.geScoreToDisplay();
         }
@@ -31,12 +35,15 @@ public class Game {
 
     public void scoreRandomPoint() {
         int random = new Random().nextInt(2) + 1;
-        switch (random){
-            case 1 : playerOne.winsPoint();
+        switch (random) {
+            case 1:
+                playerOne.winsPoint();
                 break;
-            case 2 : playerTwo.winsPoint();
+            case 2:
+                playerTwo.winsPoint();
                 break;
-            default: break;
+            default:
+                break;
         }
     }
 }
