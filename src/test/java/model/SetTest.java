@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class SetTest {
 
     @Test
-    public void set_scores_should_be_zero_when_start_new_set() {
+    void set_scores_should_be_zero_when_start_new_set() {
         // Given
         String playerOneName = "player one name";
         String playerTwoName = "player two name";

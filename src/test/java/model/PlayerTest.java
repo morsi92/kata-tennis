@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class PlayerTest {
 
     @Test
-    public void should_display_game_score_0() {
+    void should_display_game_score_0() {
         // Given
         Player player = new Player("");
         player.setGameScore(0);
@@ -19,7 +19,7 @@ class PlayerTest {
     }
 
     @Test
-    public void should_display_game_score_15_when_player_wins_one_point() {
+    void should_display_game_score_15_when_player_wins_one_point() {
         // Given
         Player player = new Player("");
         player.setGameScore(1);
@@ -32,7 +32,7 @@ class PlayerTest {
     }
 
     @Test
-    public void should_display_game_score_30_when_player_wins_two_points() {
+    void should_display_game_score_30_when_player_wins_two_points() {
         // Given
         Player player = new Player("");
         player.setGameScore(2);
