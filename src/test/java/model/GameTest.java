@@ -52,7 +52,7 @@ class GameTest {
 
         // When
         Game game = new Game(playerOne, playerTwo);
-        playerOne.setGameScore(3);
+        playerOne.setGameScore(2);
         playerTwo.setGameScore(4);
 
         // Then
@@ -69,7 +69,7 @@ class GameTest {
 
         // When
         Game game = new Game(playerOne, playerTwo);
-        playerOne.setGameScore(3);
+        playerOne.setGameScore(2);
         playerTwo.setGameScore(4);
         game.getScore();
 

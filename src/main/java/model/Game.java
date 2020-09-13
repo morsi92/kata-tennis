@@ -19,9 +19,19 @@ public class Game {
             if (playerOne.hasSameGameScoreAs(playerTwo)) {
                 return playerOne.geScoreToDisplay(DEUCE) + "\n" + playerTwo.geScoreToDisplay(DEUCE);
             } else {
-                playerOne.resetGameScore();
-                playerTwo.resetGameScore();
-                return leadPlayer.getName() + SPACE + WIN_THE_GAME;
+                if (Math.abs(playerOne.getGameScore() - playerTwo.getGameScore()) == 1) {
+                    if (playerOne.getGameScore() > playerTwo.getGameScore()) {
+                        return playerOne.geScoreToDisplay("ADV") + "\n" + playerTwo.geScoreToDisplay("40");
+                    } else {
+                        return playerOne.geScoreToDisplay("40") + "\n" + playerTwo.geScoreToDisplay("ADV");
+                    }
+
+                } else {
+                    playerOne.resetGameScore();
+                    playerTwo.resetGameScore();
+                    return leadPlayer.getName() + SPACE + WIN_THE_GAME;
+                }
+
             }
         } else {
             return playerOne.geScoreToDisplay() + "\n" + playerTwo.geScoreToDisplay();
