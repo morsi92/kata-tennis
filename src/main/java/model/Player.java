@@ -5,6 +5,6 @@ public class Player {
     private String gameScore;
 
     public String getGameScore() {
-        return null;
+        return "0";
     }
 }
