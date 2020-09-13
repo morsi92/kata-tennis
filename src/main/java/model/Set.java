@@ -1,10 +1,8 @@
 package model;
 
-public class Set {
-    private Player playerOne;
-    private Player playerTwo;
+public class Set extends Score {
 
-    public Set(Player playerOne, Player playerTwo) {
+    Set(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
         playerOne.setSetScore(0);
@@ -12,6 +10,6 @@ public class Set {
     }
 
     public String getScore() {
-        return playerOne.getSetScoreToDisplay() + "\n" + playerTwo.getSetScoreToDisplay();
+        return display(playerOne.getSetScoreToDisplay(), playerTwo.getSetScoreToDisplay());
     }
 }
