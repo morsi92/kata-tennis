@@ -14,7 +14,11 @@ public class Player {
     }
 
     public String getGameScore() {
-        return "0";
+        if (gameScore == 0) {
+            return "0";
+        } else {
+            return "15";
+        }
     }
 
     public String geScoreToDisplay() {
