@@ -31,4 +31,17 @@ class PlayerTest {
         Assertions.assertThat(gameScore).isEqualTo("15");
     }
 
+    @Test
+    public void should_display_game_score_30_when_player_wins_two_points() {
+        // Given
+        Player player = new Player("");
+        player.setGameScore(1);
+
+        // When
+        String gameScore = player.getGameScore();
+
+        // Then
+        Assertions.assertThat(gameScore).isEqualTo("30");
+    }
+
 }
