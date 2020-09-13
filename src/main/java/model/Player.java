@@ -40,11 +40,6 @@ public class Player {
         this.gameScore = gameScore;
     }
 
-    void winsPoint() {
-        System.out.println(name + " wins 1 point");
-        this.gameScore++;
-    }
-
     String winTheGame() {
         this.setScore++;
         return this.name + SPACE + WIN_THE_GAME;
@@ -58,16 +53,8 @@ public class Player {
         return this.gameScore == player.getGameScore();
     }
 
-    public void setSetScore(int setScore) {
+    void setSetScore(int setScore) {
         this.setScore = setScore;
-    }
-
-    void setTieBreakScore(int tieBreakScore) {
-        this.tieBreakScore = tieBreakScore;
-    }
-
-    int getTieBreakScore() {
-        return this.tieBreakScore;
     }
 
     int getSetScore() {
@@ -78,11 +65,25 @@ public class Player {
         return this.name + SPACE + setScore;
     }
 
+    int getTieBreakScore() {
+        return this.tieBreakScore;
+    }
+
     String getTieBreakScoreToDisplay() {
         return this.name + SPACE + tieBreakScore;
     }
 
+    void setTieBreakScore(int tieBreakScore) {
+        this.tieBreakScore = tieBreakScore;
+    }
+
+    void winsPoint() {
+        System.out.println(name + " wins 1 point");
+        this.gameScore++;
+    }
+
     void winsTieBreakPoint() {
+        System.out.println(name + " wins 1 point");
         this.tieBreakScore++;
     }
 }
