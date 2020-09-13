@@ -57,4 +57,22 @@ class SetTest {
         Assertions.assertThat(set.getScore()).isEqualTo(expectedSetScore);
     }
 
+    @Test
+    void should_display_the_set_score_when_both_players_reach_five_games() {
+        // Given
+        String playerOneName = "player one name";
+        String playerTwoName = "player two name";
+        Player playerOne = new Player(playerOneName);
+        Player playerTwo = new Player(playerTwoName);
+        String expectedSetScore = playerOneName + " " + "6" + "\n" + playerTwoName + " " + "5";
+
+        // When
+        Set set = new Set(playerOne, playerTwo);
+        playerOne.setSetScore(6);
+        playerTwo.setSetScore(5);
+
+        // Then
+        Assertions.assertThat(set.getScore()).isEqualTo(expectedSetScore);
+    }
+
 }
