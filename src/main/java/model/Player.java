@@ -1,11 +1,11 @@
 package model;
 
-import static constants.Constants.GAME_SCORE_TO_DISPLAY;
-import static constants.Constants.SCORE_40;
+import static constants.Constants.*;
 
 public class Player {
     private String name;
     private int gameScore;
+    private int setScore;
 
 
     public Player(String name) {
@@ -13,15 +13,11 @@ public class Player {
         this.gameScore = 0;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getGameScore() {
+    int getGameScore() {
         return gameScore;
     }
 
-    public String getGameScoreString() {
+    String getGameScoreString() {
         if (gameScore < 3) {
             return GAME_SCORE_TO_DISPLAY.get(gameScore);
         } else {
@@ -29,28 +25,49 @@ public class Player {
         }
     }
 
-    public String geScoreToDisplay() {
-        return this.name + " " + getGameScoreString();
+    String geGameScoreToDisplay() {
+        return this.name + SPACE + getGameScoreString();
     }
 
-    public String geScoreToDisplay(String score) {
-        return this.name + " " + score;
+    String geGameScoreToDisplay(String score) {
+        return this.name + SPACE + score;
     }
 
-    public void setGameScore(int gameScore) {
+    void setGameScore(int gameScore) {
         this.gameScore = gameScore;
     }
 
-    public void resetGameScore() {
+    void resetGameScore() {
         this.gameScore = 0;
     }
 
-    public void winsPoint() {
+    void winsPoint() {
         System.out.println(name + " wins 1 point");
         this.gameScore++;
     }
 
-    public boolean hasSameGameScoreAs(Player player) {
+    String winTheGame() {
+        this.setScore++;
+        return this.name + SPACE + WIN_THE_GAME;
+    }
+
+    String winTheSet() {
+        return this.name + SPACE + WIN_THE_SET;
+    }
+
+    boolean hasSameGameScoreAs(Player player) {
         return this.gameScore == player.getGameScore();
+    }
+
+    void setSetScore(int setScore) {
+        this.setScore = setScore;
+    }
+
+    public int getSetScore() {
+        return this.setScore;
+    }
+
+    String getSetScoreToDisplay() {
+        return this.name + SPACE + setScore;
     }
 }

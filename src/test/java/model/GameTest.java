@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class GameTest {
 
     @Test
-    public void when_game_starts_the_score_of_two_players_should_be_zero() {
+    void when_game_starts_the_score_of_two_players_should_be_zero() {
         // Given
         String playerOneName = "player one name";
         String playerTwoName = "player two name";
@@ -24,7 +24,7 @@ class GameTest {
     }
 
     @Test
-    public void should_display_game_score() {
+    void should_display_game_score() {
         // Given
         String playerOneName = "player one name";
         String playerTwoName = "player two name";
@@ -42,7 +42,7 @@ class GameTest {
     }
 
     @Test
-    public void should_display_game_winner() {
+    void should_display_game_winner() {
         // Given
         String playerOneName = "player one name";
         String playerTwoName = "player two name";
@@ -60,26 +60,7 @@ class GameTest {
     }
 
     @Test
-    public void should_reset_score_after_a_player_win_the_game() {
-        // Given
-        String playerOneName = "player one name";
-        String playerTwoName = "player two name";
-        Player playerOne = new Player(playerOneName);
-        Player playerTwo = new Player(playerTwoName);
-
-        // When
-        Game game = new Game(playerOne, playerTwo);
-        playerOne.setGameScore(2);
-        playerTwo.setGameScore(4);
-        game.getScore();
-
-        // Then
-        Assertions.assertThat(playerOne.getGameScoreString()).isEqualTo("0");
-        Assertions.assertThat(playerTwo.getGameScoreString()).isEqualTo("0");
-    }
-
-    @Test
-    public void should_display_deuce() {
+    void should_display_deuce() {
         // Given
         String playerOneName = "player one name";
         String playerTwoName = "player two name";
@@ -97,7 +78,7 @@ class GameTest {
     }
 
     @Test
-    public void should_display_advantage() {
+    void should_display_advantage() {
         // Given
         String playerOneName = "player one name";
         String playerTwoName = "player two name";

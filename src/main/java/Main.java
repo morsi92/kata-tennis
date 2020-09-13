@@ -1,9 +1,9 @@
-import model.Game;
 import model.Player;
+import model.Set;
 
 import java.util.Scanner;
 
-import static constants.Constants.WIN_THE_GAME;
+import static constants.Constants.WIN_THE_SET;
 
 public class Main {
 
@@ -16,16 +16,16 @@ public class Main {
 
         Player playerOne = new Player(playerOneName);
         Player playerTwo = new Player(playerTwoName);
-        Game game = new Game(playerOne, playerTwo);
+        Set set = new Set(playerOne, playerTwo);
 
-        String gameScore = game.getScore();
-        System.out.println(gameScore);
+        String setScore;
 
         do {
-            game.scoreRandomPoint();
-            gameScore = game.getScore();
-            System.out.println(gameScore);
-        } while (!gameScore.contains(WIN_THE_GAME));
+            set.getCurrentGame().scoreRandomPoint();
+            System.out.println("Game score : \n" + set.getCurrentGame().getScore());
+            setScore = set.getScore();
+            System.out.println("Set score : \n" + setScore);
+        } while (!setScore.contains(WIN_THE_SET));
 
     }
 }
