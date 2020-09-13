@@ -47,6 +47,7 @@ public class Player {
     }
 
     String winTheGame() {
+        this.setScore++;
         return this.name + SPACE + WIN_THE_GAME;
     }
 

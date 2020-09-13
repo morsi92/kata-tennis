@@ -60,25 +60,6 @@ class GameTest {
     }
 
     @Test
-    void should_reset_score_after_a_player_win_the_game() {
-        // Given
-        String playerOneName = "player one name";
-        String playerTwoName = "player two name";
-        Player playerOne = new Player(playerOneName);
-        Player playerTwo = new Player(playerTwoName);
-
-        // When
-        Game game = new Game(playerOne, playerTwo);
-        playerOne.setGameScore(2);
-        playerTwo.setGameScore(4);
-        game.getScore();
-
-        // Then
-        Assertions.assertThat(playerOne.getGameScoreString()).isEqualTo("0");
-        Assertions.assertThat(playerTwo.getGameScoreString()).isEqualTo("0");
-    }
-
-    @Test
     void should_display_deuce() {
         // Given
         String playerOneName = "player one name";

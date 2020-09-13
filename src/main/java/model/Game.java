@@ -6,9 +6,12 @@ import static constants.Constants.*;
 
 public class Game extends Score {
 
-    public Game(Player playerOne, Player playerTwo) {
+    private boolean ended;
+
+    Game(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
+        ended = false;
     }
 
     public String getScore() {
@@ -20,21 +23,24 @@ public class Game extends Score {
                 if (isOnePointDifference()) {
                     return advantageLeadPlayer(leadPlayer);
                 }
-                return leadPlayerWin(leadPlayer);
+                endGame();
+                return leadPlayer.winTheGame();
             }
         }
         return display(playerOne.geGameScoreToDisplay(), playerTwo.geGameScoreToDisplay());
 
     }
 
-    private String deuce() {
-        return display(playerOne.geGameScoreToDisplay(DEUCE), playerTwo.geGameScoreToDisplay(DEUCE));
+    private void endGame() {
+        this.ended = true;
     }
 
-    private String leadPlayerWin(Player leadPlayer) {
-        playerOne.resetGameScore();
-        playerTwo.resetGameScore();
-        return leadPlayer.winTheGame();
+    boolean isEnded() {
+        return ended;
+    }
+
+    private String deuce() {
+        return display(playerOne.geGameScoreToDisplay(DEUCE), playerTwo.geGameScoreToDisplay(DEUCE));
     }
 
     private String advantageLeadPlayer(Player leadPlayer) {
