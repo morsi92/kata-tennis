@@ -2,7 +2,8 @@ package model;
 
 public class Player {
     private String name;
-    private String gameScore;
+    private int gameScore;
+
 
     public Player(String name) {
         this.name = name;
@@ -18,5 +19,9 @@ public class Player {
 
     public String geScoreToDisplay() {
         return this.name + " " + "0";
+    }
+
+    public void setGameScore(int gameScore) {
+        this.gameScore = gameScore;
     }
 }
