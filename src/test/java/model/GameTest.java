@@ -78,4 +78,22 @@ class GameTest {
         Assertions.assertThat(playerTwo.getGameScoreString()).isEqualTo("0");
     }
 
+    @Test
+    public void should_display_deuce() {
+        // Given
+        String playerOneName = "player one name";
+        String playerTwoName = "player two name";
+        Player playerOne = new Player(playerOneName);
+        Player playerTwo = new Player(playerTwoName);
+        String expectedGameScore = playerOneName + " " + "DEUCE" + "\n" + playerTwoName + " " + "DEUCE";
+
+        // When
+        Game game = new Game(playerOne, playerTwo);
+        playerOne.setGameScore(4);
+        playerTwo.setGameScore(4);
+
+        // Then
+        Assertions.assertThat(game.getScore()).isEqualTo(expectedGameScore);
+    }
+
 }
