@@ -10,6 +10,16 @@ public class Game {
     }
 
     public String getScore() {
-        return playerOne.geScoreToDisplay() + "\n" + playerTwo.geScoreToDisplay();
+        Player leadPlayer = getLeadPlayer();
+        if (leadPlayer.getGameScore() > 3) {
+            return leadPlayer.getName() + " " + "win the game";
+        }
+        else {
+            return playerOne.geScoreToDisplay() + "\n" + playerTwo.geScoreToDisplay();
+        }
+    }
+
+    private Player getLeadPlayer() {
+        return playerOne.getGameScore() >= playerTwo.getGameScore() ? playerOne : playerTwo;
     }
 }

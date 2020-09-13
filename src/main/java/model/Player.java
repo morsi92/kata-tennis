@@ -19,12 +19,16 @@ public class Player {
         return name;
     }
 
-    public String getGameScore() {
+    public int getGameScore() {
+        return gameScore;
+    }
+
+    public String getGameScoreString() {
         return GAME_SCORE_TO_DISPLAY.get(gameScore);
     }
 
     public String geScoreToDisplay() {
-        return this.name + " " + getGameScore();
+        return this.name + " " + getGameScoreString();
     }
 
     public void setGameScore(int gameScore) {

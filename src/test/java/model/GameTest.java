@@ -18,8 +18,8 @@ class GameTest {
         Game game = new Game(playerOne, playerTwo);
 
         // Then
-        Assertions.assertThat(playerOne.getGameScore()).isEqualTo("0");
-        Assertions.assertThat(playerTwo.getGameScore()).isEqualTo("0");
+        Assertions.assertThat(playerOne.getGameScoreString()).isEqualTo("0");
+        Assertions.assertThat(playerTwo.getGameScoreString()).isEqualTo("0");
         Assertions.assertThat(game.getScore()).isEqualTo(expectedGameScore);
     }
 
@@ -48,7 +48,7 @@ class GameTest {
         String playerTwoName = "player two name";
         Player playerOne = new Player(playerOneName);
         Player playerTwo = new Player(playerTwoName);
-        String expectedGameScore = playerTwoName + "win the game";
+        String expectedGameScore = playerTwoName + " " + "win the game";
 
         // When
         Game game = new Game(playerOne, playerTwo);

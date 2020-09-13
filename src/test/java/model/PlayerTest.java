@@ -12,7 +12,7 @@ class PlayerTest {
         player.setGameScore(0);
 
         // When
-        String gameScore = player.getGameScore();
+        String gameScore = player.getGameScoreString();
 
         // Then
         Assertions.assertThat(gameScore).isEqualTo("0");
@@ -25,7 +25,7 @@ class PlayerTest {
         player.setGameScore(1);
 
         // When
-        String gameScore = player.getGameScore();
+        String gameScore = player.getGameScoreString();
 
         // Then
         Assertions.assertThat(gameScore).isEqualTo("15");
@@ -38,7 +38,7 @@ class PlayerTest {
         player.setGameScore(2);
 
         // When
-        String gameScore = player.getGameScore();
+        String gameScore = player.getGameScoreString();
 
         // Then
         Assertions.assertThat(gameScore).isEqualTo("30");
@@ -51,7 +51,7 @@ class PlayerTest {
         player.setGameScore(3);
 
         // When
-        String gameScore = player.getGameScore();
+        String gameScore = player.getGameScoreString();
 
         // Then
         Assertions.assertThat(gameScore).isEqualTo("40");
