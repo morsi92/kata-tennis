@@ -31,6 +31,10 @@ public class Player {
         return this.name + " " + getGameScoreString();
     }
 
+    public String geScoreToDisplay(String score) {
+        return this.name + " " + score;
+    }
+
     public void setGameScore(int gameScore) {
         this.gameScore = gameScore;
     }
@@ -42,5 +46,9 @@ public class Player {
     public void winsPoint() {
         System.out.println(name + " wins 1 point");
         this.gameScore++;
+    }
+
+    public boolean hasSameGameScoreAs(Player player) {
+        return this.gameScore == player.getGameScore();
     }
 }

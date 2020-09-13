@@ -2,8 +2,7 @@ package model;
 
 import java.util.Random;
 
-import static constants.Constants.SPACE;
-import static constants.Constants.WIN_THE_GAME;
+import static constants.Constants.*;
 
 public class Game {
     private Player playerOne;
@@ -17,8 +16,8 @@ public class Game {
     public String getScore() {
         Player leadPlayer = getLeadPlayer();
         if (leadPlayer.getGameScore() > 3) {
-            if (playerOne.getGameScore() == playerTwo.getGameScore()) {
-                return playerOne.getName() + SPACE + "DEUCE" + "\n" + playerTwo.getName() + SPACE + "DEUCE";
+            if (playerOne.hasSameGameScoreAs(playerTwo)) {
+                return playerOne.geScoreToDisplay(DEUCE) + "\n" + playerTwo.geScoreToDisplay(DEUCE);
             } else {
                 playerOne.resetGameScore();
                 playerTwo.resetGameScore();
