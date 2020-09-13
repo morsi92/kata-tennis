@@ -1,8 +1,13 @@
 package model;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Player {
     private String name;
     private int gameScore;
+
+    public static final List<String> GAME_SCORE_TO_DISPLAY = Arrays.asList("0", "15", "30", "40");
 
 
     public Player(String name) {
@@ -14,15 +19,7 @@ public class Player {
     }
 
     public String getGameScore() {
-        if (gameScore == 0) {
-            return "0";
-        } else {
-            if (gameScore == 1) {
-                return "15";
-            } else {
-                return "30";
-            }
-        }
+        return GAME_SCORE_TO_DISPLAY.get(gameScore);
     }
 
     public String geScoreToDisplay() {
