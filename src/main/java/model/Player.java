@@ -6,6 +6,7 @@ public class Player {
     private String name;
     private int gameScore;
     private int setScore;
+    private int tieBreakScore;
 
 
     public Player(String name) {
@@ -37,10 +38,6 @@ public class Player {
         this.gameScore = gameScore;
     }
 
-    void resetGameScore() {
-        this.gameScore = 0;
-    }
-
     void winsPoint() {
         System.out.println(name + " wins 1 point");
         this.gameScore++;
@@ -63,11 +60,19 @@ public class Player {
         this.setScore = setScore;
     }
 
+    void setTieBreakScore(int tieBreakScore) {
+        this.tieBreakScore = tieBreakScore;
+    }
+
     public int getSetScore() {
         return this.setScore;
     }
 
     String getSetScoreToDisplay() {
         return this.name + SPACE + setScore;
+    }
+
+    String getTieBreakScoreToDisplay() {
+        return this.name + SPACE + tieBreakScore;
     }
 }

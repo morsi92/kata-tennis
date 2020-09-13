@@ -21,4 +21,22 @@ class TieBreakGameTest {
         Assertions.assertThat(tieBreakGame.getScore()).isEqualTo(expectedGameScore);
     }
 
+    @Test
+    void should_display_tie_break_game_score() {
+        // Given
+        String playerOneName = "player one name";
+        String playerTwoName = "player two name";
+        Player playerOne = new Player(playerOneName);
+        Player playerTwo = new Player(playerTwoName);
+        String expectedGameScore = playerOneName + " " + "4" + "\n" + playerTwoName + " " + "2";
+
+        // When
+        TieBreakGame tieBreakGame = new TieBreakGame(playerOne, playerTwo);
+        playerOne.setTieBreakScore(4);
+        playerTwo.setTieBreakScore(2);
+
+        // Then
+        Assertions.assertThat(tieBreakGame.getScore()).isEqualTo(expectedGameScore);
+    }
+
 }

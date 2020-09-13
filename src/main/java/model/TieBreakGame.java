@@ -11,7 +11,7 @@ public class TieBreakGame extends Score {
     }
 
     String getScore() {
-        return null;
+        return display(playerOne.getTieBreakScoreToDisplay(), playerTwo.getTieBreakScoreToDisplay());
     }
 
     Player getLeadPlayer() {
