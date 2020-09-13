@@ -17,7 +17,11 @@ public class Player {
         if (gameScore == 0) {
             return "0";
         } else {
-            return "15";
+            if (gameScore == 1) {
+                return "15";
+            } else {
+                return "30";
+            }
         }
     }
 

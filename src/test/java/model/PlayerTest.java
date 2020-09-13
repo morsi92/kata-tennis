@@ -35,7 +35,7 @@ class PlayerTest {
     public void should_display_game_score_30_when_player_wins_two_points() {
         // Given
         Player player = new Player("");
-        player.setGameScore(1);
+        player.setGameScore(2);
 
         // When
         String gameScore = player.getGameScore();
