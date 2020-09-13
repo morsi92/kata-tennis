@@ -10,6 +10,7 @@ public class Set extends Score {
         playerOne.setSetScore(0);
         playerTwo.setSetScore(0);
         currentGame = new Game(playerOne, playerTwo);
+        ended = false;
     }
 
     public String getScore() {
@@ -21,9 +22,14 @@ public class Set extends Score {
         }
         Player leadPlayer = getLeadPlayer();
         if (leadPlayer.getSetScore() >= 6 && Math.abs(playerOne.getSetScore() - playerTwo.getSetScore()) > 1) {
+            endSet();
             return leadPlayer.winTheSet();
         }
         return display(playerOne.getSetScoreToDisplay(), playerTwo.getSetScoreToDisplay());
+    }
+
+    private void endSet() {
+        ended = true;
     }
 
     private boolean tieBreakReached() {

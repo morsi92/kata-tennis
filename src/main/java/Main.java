@@ -3,8 +3,6 @@ import model.Set;
 
 import java.util.Scanner;
 
-import static constants.Constants.WIN_THE_SET;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -25,7 +23,7 @@ public class Main {
             System.out.println("Game score : \n" + set.getCurrentGame().getScore());
             setScore = set.getScore();
             System.out.println("Set score : \n" + setScore);
-        } while (!setScore.contains(WIN_THE_SET));
+        } while (!set.isEnded());
 
     }
 }

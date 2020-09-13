@@ -58,7 +58,7 @@ public class Player {
         return this.gameScore == player.getGameScore();
     }
 
-    void setSetScore(int setScore) {
+    public void setSetScore(int setScore) {
         this.setScore = setScore;
     }
 
@@ -70,7 +70,7 @@ public class Player {
         return this.tieBreakScore;
     }
 
-    public int getSetScore() {
+    int getSetScore() {
         return this.setScore;
     }
 
@@ -80,5 +80,9 @@ public class Player {
 
     String getTieBreakScoreToDisplay() {
         return this.name + SPACE + tieBreakScore;
+    }
+
+    void winsTieBreakPoint() {
+        this.tieBreakScore++;
     }
 }
