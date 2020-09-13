@@ -34,7 +34,7 @@ public class Game extends Score {
     private String leadPlayerWin(Player leadPlayer) {
         playerOne.resetGameScore();
         playerTwo.resetGameScore();
-        return leadPlayer.getName() + SPACE + WIN_THE_GAME;
+        return leadPlayer.winTheGame();
     }
 
     private String advantageLeadPlayer(Player leadPlayer) {

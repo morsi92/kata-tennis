@@ -13,8 +13,8 @@ public class Set extends Score {
 
     public String getScore() {
         Player leadPlayer = getLeadPlayer();
-        if (leadPlayer.getSetScore() == 6 && Math.abs(playerOne.getSetScore() - playerTwo.getSetScore()) > 1) {
-            return leadPlayer.getName() + SPACE + WIN_THE_SET;
+        if (leadPlayer.getSetScore() >= 6 && Math.abs(playerOne.getSetScore() - playerTwo.getSetScore()) > 1) {
+            return leadPlayer.winTheSet();
         }
         return display(playerOne.getSetScoreToDisplay(), playerTwo.getSetScoreToDisplay());
     }

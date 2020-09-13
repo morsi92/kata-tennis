@@ -13,10 +13,6 @@ public class Player {
         this.gameScore = 0;
     }
 
-    String getName() {
-        return name;
-    }
-
     int getGameScore() {
         return gameScore;
     }
@@ -48,6 +44,14 @@ public class Player {
     void winsPoint() {
         System.out.println(name + " wins 1 point");
         this.gameScore++;
+    }
+
+    String winTheGame() {
+        return this.name + SPACE + WIN_THE_GAME;
+    }
+
+    String winTheSet() {
+        return this.name + SPACE + WIN_THE_SET;
     }
 
     boolean hasSameGameScoreAs(Player player) {
