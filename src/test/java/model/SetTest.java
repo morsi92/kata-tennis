@@ -21,4 +21,22 @@ class SetTest {
         Assertions.assertThat(set.getScore()).isEqualTo(expectedSetScore);
     }
 
+    @Test
+    void should_display_the_set_score() {
+        // Given
+        String playerOneName = "player one name";
+        String playerTwoName = "player two name";
+        Player playerOne = new Player(playerOneName);
+        Player playerTwo = new Player(playerTwoName);
+        String expectedSetScore = playerOneName + " " + "4" + "\n" + playerTwoName + " " + "1";
+
+        // When
+        Set set = new Set(playerOne, playerTwo);
+        playerOne.setSetScore(4);
+        playerTwo.setSetScore(1);
+
+        // Then
+        Assertions.assertThat(set.getScore()).isEqualTo(expectedSetScore);
+    }
+
 }
