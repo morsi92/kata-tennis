@@ -1,5 +1,8 @@
 package model;
 
+import static constants.Constants.SPACE;
+import static constants.Constants.WIN_THE_GAME;
+
 public class Game {
     private Player playerOne;
     private Player playerTwo;
@@ -12,9 +15,8 @@ public class Game {
     public String getScore() {
         Player leadPlayer = getLeadPlayer();
         if (leadPlayer.getGameScore() > 3) {
-            return leadPlayer.getName() + " " + "win the game";
-        }
-        else {
+            return leadPlayer.getName() + SPACE + WIN_THE_GAME;
+        } else {
             return playerOne.geScoreToDisplay() + "\n" + playerTwo.geScoreToDisplay();
         }
     }

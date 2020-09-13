@@ -48,7 +48,7 @@ class GameTest {
         String playerTwoName = "player two name";
         Player playerOne = new Player(playerOneName);
         Player playerTwo = new Player(playerTwoName);
-        String expectedGameScore = playerTwoName + " " + "win the game";
+        String expectedGameScore = playerTwoName + " win the game";
 
         // When
         Game game = new Game(playerOne, playerTwo);
