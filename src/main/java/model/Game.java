@@ -10,6 +10,6 @@ public class Game {
     }
 
     public String getScore() {
-        return playerOne.getName() + " " + "0" + "\n" + playerTwo.getName() + " " + "0";
+        return playerOne.geScoreToDisplay() + "\n" + playerTwo.geScoreToDisplay();
     }
 }

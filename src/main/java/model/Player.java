@@ -15,4 +15,8 @@ public class Player {
     public String getGameScore() {
         return "0";
     }
+
+    public String geScoreToDisplay() {
+        return this.name + " " + "0";
+    }
 }
