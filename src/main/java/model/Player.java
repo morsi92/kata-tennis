@@ -24,7 +24,7 @@ public class Player {
     }
 
     public String geScoreToDisplay() {
-        return this.name + " " + "0";
+        return this.name + " " + getGameScore();
     }
 
     public void setGameScore(int gameScore) {
