@@ -4,6 +4,10 @@ public class Player {
     private String name;
     private String gameScore;
 
+    public Player(String name) {
+        this.name = name;
+    }
+
     public String getGameScore() {
         return "0";
     }

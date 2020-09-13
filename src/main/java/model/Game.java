@@ -8,4 +8,8 @@ public class Game {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
     }
+
+    public String getScore() {
+        return null;
+    }
 }
