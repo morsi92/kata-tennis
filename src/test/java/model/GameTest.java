@@ -23,4 +23,22 @@ class GameTest {
         Assertions.assertThat(game.getScore()).isEqualTo(expectedGameScore);
     }
 
+    @Test
+    public void should_display_game_score() {
+        // Given
+        String playerOneName = "player one name";
+        String playerTwoName = "player two name";
+        Player playerOne = new Player(playerOneName);
+        Player playerTwo = new Player(playerTwoName);
+        playerOne.setGameScore(2);
+        playerTwo.setGameScore(3);
+        String expectedGameScore = playerOneName + " " + "30" + "\n" + playerTwoName + " " + "40";
+
+        // When
+        Game game = new Game(playerOne, playerTwo);
+
+        // Then
+        Assertions.assertThat(game.getScore()).isEqualTo(expectedGameScore);
+    }
+
 }
