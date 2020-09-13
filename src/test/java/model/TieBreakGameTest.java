@@ -39,4 +39,22 @@ class TieBreakGameTest {
         Assertions.assertThat(tieBreakGame.getScore()).isEqualTo(expectedGameScore);
     }
 
+    @Test
+    void should_display_tie_break_game_score_when_player_win_the_game() {
+        // Given
+        String playerOneName = "player one name";
+        String playerTwoName = "player two name";
+        Player playerOne = new Player(playerOneName);
+        Player playerTwo = new Player(playerTwoName);
+        String expectedGameScore = playerOneName + " win the game";
+
+        // When
+        TieBreakGame tieBreakGame = new TieBreakGame(playerOne, playerTwo);
+        playerOne.setTieBreakScore(7);
+        playerTwo.setTieBreakScore(5);
+
+        // Then
+        Assertions.assertThat(tieBreakGame.getScore()).isEqualTo(expectedGameScore);
+    }
+
 }
