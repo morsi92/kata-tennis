@@ -1,13 +1,11 @@
 package model;
 
-import java.util.Arrays;
-import java.util.List;
+import static constants.Constants.GAME_SCORE_TO_DISPLAY;
+import static constants.Constants.SCORE_40;
 
 public class Player {
     private String name;
     private int gameScore;
-
-    public static final List<String> GAME_SCORE_TO_DISPLAY = Arrays.asList("0", "15", "30", "40");
 
 
     public Player(String name) {
@@ -24,11 +22,19 @@ public class Player {
     }
 
     public String getGameScoreString() {
-        return GAME_SCORE_TO_DISPLAY.get(gameScore);
+        if (gameScore < 3) {
+            return GAME_SCORE_TO_DISPLAY.get(gameScore);
+        } else {
+            return SCORE_40;
+        }
     }
 
     public String geScoreToDisplay() {
         return this.name + " " + getGameScoreString();
+    }
+
+    public String geScoreToDisplay(String score) {
+        return this.name + " " + score;
     }
 
     public void setGameScore(int gameScore) {
@@ -42,5 +48,9 @@ public class Player {
     public void winsPoint() {
         System.out.println(name + " wins 1 point");
         this.gameScore++;
+    }
+
+    public boolean hasSameGameScoreAs(Player player) {
+        return this.gameScore == player.getGameScore();
     }
 }

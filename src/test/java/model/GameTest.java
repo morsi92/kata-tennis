@@ -52,7 +52,7 @@ class GameTest {
 
         // When
         Game game = new Game(playerOne, playerTwo);
-        playerOne.setGameScore(3);
+        playerOne.setGameScore(2);
         playerTwo.setGameScore(4);
 
         // Then
@@ -69,13 +69,49 @@ class GameTest {
 
         // When
         Game game = new Game(playerOne, playerTwo);
-        playerOne.setGameScore(3);
+        playerOne.setGameScore(2);
         playerTwo.setGameScore(4);
         game.getScore();
 
         // Then
         Assertions.assertThat(playerOne.getGameScoreString()).isEqualTo("0");
         Assertions.assertThat(playerTwo.getGameScoreString()).isEqualTo("0");
+    }
+
+    @Test
+    public void should_display_deuce() {
+        // Given
+        String playerOneName = "player one name";
+        String playerTwoName = "player two name";
+        Player playerOne = new Player(playerOneName);
+        Player playerTwo = new Player(playerTwoName);
+        String expectedGameScore = playerOneName + " " + "DEUCE" + "\n" + playerTwoName + " " + "DEUCE";
+
+        // When
+        Game game = new Game(playerOne, playerTwo);
+        playerOne.setGameScore(4);
+        playerTwo.setGameScore(4);
+
+        // Then
+        Assertions.assertThat(game.getScore()).isEqualTo(expectedGameScore);
+    }
+
+    @Test
+    public void should_display_advantage() {
+        // Given
+        String playerOneName = "player one name";
+        String playerTwoName = "player two name";
+        Player playerOne = new Player(playerOneName);
+        Player playerTwo = new Player(playerTwoName);
+        String expectedGameScore = playerOneName + " " + "ADV" + "\n" + playerTwoName + " " + "40";
+
+        // When
+        Game game = new Game(playerOne, playerTwo);
+        playerOne.setGameScore(4);
+        playerTwo.setGameScore(3);
+
+        // Then
+        Assertions.assertThat(game.getScore()).isEqualTo(expectedGameScore);
     }
 
 }
