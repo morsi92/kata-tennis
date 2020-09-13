@@ -25,7 +25,7 @@ public class Game {
                 return leadPlayerWin(leadPlayer);
             }
         }
-        return display(playerOne.geScoreToDisplay(), playerTwo.geScoreToDisplay());
+        return display(playerOne.geGameScoreToDisplay(), playerTwo.geGameScoreToDisplay());
 
     }
 
@@ -34,7 +34,7 @@ public class Game {
     }
 
     private String deuce() {
-        return display(playerOne.geScoreToDisplay(DEUCE), playerTwo.geScoreToDisplay(DEUCE));
+        return display(playerOne.geGameScoreToDisplay(DEUCE), playerTwo.geGameScoreToDisplay(DEUCE));
     }
 
     private String leadPlayerWin(Player leadPlayer) {
@@ -44,8 +44,8 @@ public class Game {
     }
 
     private String advantageLeadPlayer(Player leadPlayer) {
-        return leadPlayer == playerOne ? display(playerOne.geScoreToDisplay(ADVANTAGE), playerTwo.geScoreToDisplay()) :
-                display(playerOne.geScoreToDisplay(), playerTwo.geScoreToDisplay(ADVANTAGE));
+        return leadPlayer == playerOne ? display(playerOne.geGameScoreToDisplay(ADVANTAGE), playerTwo.geGameScoreToDisplay()) :
+                display(playerOne.geGameScoreToDisplay(), playerTwo.geGameScoreToDisplay(ADVANTAGE));
     }
 
     private boolean isOnePointDifference() {

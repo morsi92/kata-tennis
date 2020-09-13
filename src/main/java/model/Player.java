@@ -1,11 +1,11 @@
 package model;
 
-import static constants.Constants.GAME_SCORE_TO_DISPLAY;
-import static constants.Constants.SCORE_40;
+import static constants.Constants.*;
 
 public class Player {
     private String name;
     private int gameScore;
+    private int setScore;
 
 
     public Player(String name) {
@@ -29,12 +29,12 @@ public class Player {
         }
     }
 
-    public String geScoreToDisplay() {
-        return this.name + " " + getGameScoreString();
+    public String geGameScoreToDisplay() {
+        return this.name + SPACE + getGameScoreString();
     }
 
-    public String geScoreToDisplay(String score) {
-        return this.name + " " + score;
+    public String geGameScoreToDisplay(String score) {
+        return this.name + SPACE + score;
     }
 
     public void setGameScore(int gameScore) {
@@ -52,5 +52,13 @@ public class Player {
 
     public boolean hasSameGameScoreAs(Player player) {
         return this.gameScore == player.getGameScore();
+    }
+
+    public void setSetScore(int setScore) {
+        this.setScore = setScore;
+    }
+
+    public String getSetScoreToDisplay() {
+        return this.name + SPACE + setScore;
     }
 }
