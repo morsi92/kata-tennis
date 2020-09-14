@@ -10,17 +10,30 @@ public class Set extends Score {
         playerOne.setSetScore(0);
         playerTwo.setSetScore(0);
         currentGame = new Game(playerOne, playerTwo);
+        ended = false;
     }
 
     public String getScore() {
         if (currentGame.isEnded()) {
+            if (tieBreakReached()) {
+                currentGame = new TieBreakGame(playerOne, playerTwo);
+            }
             currentGame = new Game(playerOne, playerTwo);
         }
         Player leadPlayer = getLeadPlayer();
         if (leadPlayer.getSetScore() >= 6 && Math.abs(playerOne.getSetScore() - playerTwo.getSetScore()) > 1) {
+            endSet();
             return leadPlayer.winTheSet();
         }
         return display(playerOne.getSetScoreToDisplay(), playerTwo.getSetScoreToDisplay());
+    }
+
+    private void endSet() {
+        ended = true;
+    }
+
+    private boolean tieBreakReached() {
+        return playerOne.getSetScore() == 6 && playerTwo.getSetScore() == 6;
     }
 
     Player getLeadPlayer() {

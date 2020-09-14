@@ -6,8 +6,6 @@ import static constants.Constants.*;
 
 public class Game extends Score {
 
-    private boolean ended;
-
     Game(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
@@ -33,10 +31,6 @@ public class Game extends Score {
 
     private void endGame() {
         this.ended = true;
-    }
-
-    boolean isEnded() {
-        return ended;
     }
 
     private String deuce() {
